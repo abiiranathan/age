@@ -97,6 +97,11 @@ func (a Age) String() string {
 		return str.String()
 	}
 
+	// If the number of days is 0, then the baby is a newborn.
+	if a.Days == 0 {
+		return "1 day"
+	}
+
 	// Newborns(0 days) && Days old (neonates)
 	str.WriteString(fmt.Sprintf("%d day", a.Days))
 	if a.Days != 1 {
